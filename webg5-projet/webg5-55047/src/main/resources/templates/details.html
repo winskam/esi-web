@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>Détails artiste</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <h1 th:text="${artist.name}"></h1>
+        <img th:src="@{${'/image/' + artist.login + '.jpg'}}">
+        <table th:unless="${#lists.size(artist.tracks)} == 0">
+            <tr>
+                <th>Titre</th>
+                <th>Stream</th>
+                <th>Mise à jour</th>
+            </tr>
+            <tr th:each="track : ${artist.tracks}">
+                <td th:text="${track.title}"></td>
+                <td th:text="${track.stream}"></td>
+                <td>
+                    <form th:action="@{/artists/addstreams}" method="post">
+                        <input type="hidden" name="track" th:value="${track.id}" />
+                        <input type="hidden" name="artist" th:value="${artist.login}" />
+                        <input type="number" min="1" name="streamsToAdd">
+                        <input type="submit" value="Envoyer" />
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <p th:if="${#lists.size(artist.tracks)} == 0">Aucune chanson disponible..</p>
+    </main>
+</body>
+
+</html>

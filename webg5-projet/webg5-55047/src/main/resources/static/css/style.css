@@ -1,0 +1,103 @@
+body {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    margin: 0em;
+  }
+  
+  header {
+    grid-area: header;
+    text-align: center;
+    color: white;
+    background-color: rgba(10, 10, 187, 0.747);
+  }
+  
+  footer {
+    grid-area: footer;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+    color: white;
+    background-color: rgba(10, 10, 187, 0.747);
+  }
+  
+  footer p {
+    margin-right: 2em;
+  }
+  
+  footer a {
+    color: white;
+  }
+  
+  header a {
+    color: white;
+  }
+  
+  a[href^="mailto"]:hover:after {
+    content: " > 55047@etu.he2b.be " attr(title);
+  }
+  
+  td {
+    text-align: center;
+  }
+  
+  button {
+    width: 10em;
+    background-color: rgba(10, 10, 187, 0.747);
+    color: white;
+  }
+  
+  button a {
+    color: white;
+  }
+  
+  table {
+    width: 40em;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  a {
+    display: block;
+    padding: 8px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: rgb(65, 14, 185);
+  }
+  
+  .active {
+    background-color: rgb(65, 14, 185);
+  }
+  
+  input[type=text], select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  .errorMsg {
+    color: red;
+  }

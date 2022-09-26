@@ -1,0 +1,37 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/game.css">
+    <script src="libs/jquery.js"></script>
+    <script src="scripts/constants.js"></script>
+    <script src="scripts/models/paddle.js"></script>
+    <script src="scripts/models/ball.js"></script>
+    <script src="scripts/models/brick.js"></script>
+    <script src="scripts/models/player.js"></script>
+    <script src="scripts/view.js"></script>
+    <script src="scripts/controller.js"></script>
+    <title>Jeu Casse-Briques</title>
+</head>
+
+<body>
+    <header>
+        <h1>Casse Briques !</h1>
+        <h2>WEBG2 - 55047 - Winska Marika</h2>
+    </header>
+    <main>
+        <div id="infos">
+            <div id="levelField">Level : <span id="level"></span></div>
+            <div id="scoreField">Score : <span id="score"></span></div>
+        </div>
+        <div id="scene">
+            <div class="brickWall"></div>
+            <p class="message">Click to start</p>
+            <p id="lostGame" class="message hidden">You lost !</p>
+            <div id="paddle"></div>
+            <div id="ball"></div>
+        </div>
+    </main>
+</body>
+
+</html>

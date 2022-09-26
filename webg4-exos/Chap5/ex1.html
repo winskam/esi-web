@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Horaires</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Horaire">
+    <meta name="keywords" content="horaire, ESI">
+    <meta name="author" content="Marika Winska">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head> 
+
+<input type="text" id="name">
+<button>Détail</button>
+<p><br></p>
+<table id ="horaire" border="3">
+    <tr><th></th><th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Jeudi</th><th>Vendredi</th></tr>
+ <tr id="1"><th>8h15 - 10h15</th></tr>
+ <tr id="2"><th>10h30 - 12h30</th></tr>
+ <tr id="3"><th>13h45 - 15h45</th></tr>
+ <tr id="4"><th>16h - 18h</th></tr>
+</table>
+
+<script>
+    $(document).ready(function() {
+        $("button").click(function() {
+            let groupe = $("#name").val();
+            $.get("data.php?groupe=" + groupe, function (jsData, status) {
+                let horaire = JSON.parse(jsData);
+                for (i = 0; i < 5; i++) {
+                    for (j = 0; j < horaire[i].length; j++) {
+                        $(`#${i+1}`).append("<td>" + horaire[i*2][j] + "</td>");
+                    }
+                }
+            })
+        })
+    })
+</script>
+
+</body>
+</html>

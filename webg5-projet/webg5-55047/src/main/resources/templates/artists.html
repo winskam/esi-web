@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>Classement des artistes</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <h1>Classement des artistes</h1>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Nombre de chansons</th>
+            </tr>
+            <tr th:each="artist : ${artists}">
+                <td><a th:href="@{/artists/details/{login}/(login=${artist.login})}" th:text="${artist.name}"></a></td>
+                <td th:text="${#lists.size(artist.tracks)}"></td>
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>

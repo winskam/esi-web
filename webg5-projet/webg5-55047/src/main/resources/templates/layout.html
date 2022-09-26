@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <title>Musique</title>
+</head>
+
+<body>
+    <header>
+        <img th:src="@{/image/Logo-esi.png}" />
+        <h1>Examen</h1>
+        <h2>HE2B-ESI / WEBG5 / MWI / 2021-2022</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/artists">Artistes</a></li>
+        </ul>
+    </header>
+    <main layout:fragment="content"></main>
+</body>
+
+<footer>
+    <p>Author: Marika Winska</p>
+    <p><a href="mailto:55047@etu.he2b.be">Send Email</a></p>
+</footer>
+
+</html>
